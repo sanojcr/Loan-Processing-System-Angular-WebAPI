@@ -1,0 +1,41 @@
+<br>
+<br>
+
+<h4 class="text-dark text-center">My Profile</h4>
+<br>
+<div class="col-6 offset-3">
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">{{user.UserRole}}</div>
+        <br>
+        <div class="card-body  text-center">
+            <div class="form-row form-group">
+                <div class="col card">
+                    <h5>Id</h5>
+                    <p>{{user.UserId}}</p>
+                </div>
+                <div style="margin-left: 8px;" class="col card">
+                    <h5>Name</h5>
+                    <p>{{user.UserName}}</p>
+
+                </div>
+            </div>
+            <div class="form-row form-group">
+                <div class="col card">
+                    <h5>Gender</h5>
+                    <p>{{user.UserGender}}</p>
+                </div>
+                <div style="margin-left: 8px;" class="col card">
+                    <h5>Email</h5>
+                    <p>{{user.UserEmail}}</p>
+                </div>
+            </div>
+        </div>
+        <a style="margin-left: 15px;" routerLink='/editprofile' class="col-2 btn btn-sm btn-primary text-light">Edit</a>
+        <br>
+        <div class="card-footer shadow-lg" style="background-color: #143b64;">
+        </div>
+
+        <!-- <div style="background-color: #143b64; padding-top: 10px;" class="btn">
+        </div> -->
+    </div>
+</div>

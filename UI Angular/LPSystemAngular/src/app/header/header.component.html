@@ -1,0 +1,89 @@
+<div>
+    <div style="background-color:#253c52;">
+        <div style="background-color:#d51e25; height:8px; width:450px">
+        </div>
+    </div>
+    <div style="background-color: #253c52;">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-black">
+            <a class="navbar-brand" routerLink="/home">Ur Loan PS</a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation"></button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <!-- *ngIf="!userService.isAdminLogin() 
+                        && !userService.isClientLogin() 
+                        && !userService.isCustomerLogin()" -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/myprofile"
+                            *ngIf="userService.isCustomerLogin()||userService.isClientLogin()||userService.isAdminLogin()">My
+                            Profile <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item" *ngIf="!userService.isAdminLogin() 
+                    && !userService.isClientLogin() 
+                    && !userService.isCustomerLogin()">
+                        <a class="nav-link" routerLink="/makeloan">Make Loan</a>
+                    </li>
+                    <!-- <li class="nav-item" *ngIf="userService.isAdminLogin()">
+                        <a class="nav-link" routerLink="/addclient">Add Client</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/viewloanadmin" *ngIf="userService.isAdminLogin()">View Loan</a>
+                    </li>
+                    <li class="nav-item" *ngIf="userService.isAdminLogin()">
+                        <a class="nav-link" routerLink="/viewclient">View Client</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/viewcustomer" *ngIf="userService.isAdminLogin() 
+                        || userService.isClientLogin()">View Customer</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" routerLink="/newloan" *ngIf="userService.isAdminLogin()">Add Loan</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/viewloan" *ngIf="!userService.isAdminLogin()">View Loan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/viewapplication" *ngIf=" 
+                        userService.isClientLogin()">View Application</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/checkapplication" *ngIf="userService.isAdminLogin() 
+                        || userService.isClientLogin()">Check Application</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" routerLink="/addloan" *ngIf="userService.isCustomerLogin()">
+                            Make Loan</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/checkstatus" *ngIf="userService.isCustomerLogin()">
+                            Check Status</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item" *ngIf="!userService.isAdminLogin() 
+                    && !userService.isClientLogin() 
+                    && !userService.isCustomerLogin()">
+                        <a class="nav-link" routerLink="/login">Login </a>
+                    </li>
+                    <!-- <span
+                        *ngIf="userService.isAdminLogin() || userService.isClientLogin() || userService.isCustomerLogin()"
+                        style="padding-top:9px; padding-right:9px; color: gainsboro;">Welcome back {{userName}}
+                    </span> -->
+                    <li class="nav-item" *ngIf="userService.isAdminLogin() 
+                    || userService.isClientLogin() 
+                    || userService.isCustomerLogin()">
+                        <a class="nav-link" routerLink="" (click)="userService.logout()">Logout </a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" routerLink="/register">Register</a>
+                    </li> -->
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+</div>

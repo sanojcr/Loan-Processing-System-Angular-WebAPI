@@ -1,0 +1,75 @@
+<br>
+<br>
+<div *ngIf='loanDummy' class="col-md-6 offset-3">
+    <h4 class="text-dark text-center">Update Loan</h4>
+    <br>
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">Loan Details</div>
+        <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="loanUpdate(form)">
+                <div class="form-group">
+                    <label for="loantype">Loan type</label>
+
+                    <input class="form-control" type="text" id="loantype" name="loantype" #loantype="ngModel" ngModel
+                        placeholder="Enter loan type" [(ngModel)]="loanDummy.LoanType" required minlength="5">
+                    <div>
+                        <span style="color: red;" *ngIf="loantype.errors?.required">
+                            *this field is required
+                        </span>
+                        <span style="color: red;" *ngIf="loantype.errors?.minlength">
+                            *atleast 5 characters is required
+                        </span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="loanamt">Loan amount</label>
+                    <input class="form-control" type="number" id="loanamt" name="loanamt" #loanamt="ngModel" ngModel
+                        placeholder="Enter loan amount" required [(ngModel)]="loanDummy.LoanAmt"
+                        pattern="^2500000$|^[0-2][0-4][0-9]{1,5}$|^[0-9]{1,6}$">
+                    <div>
+                        <span style="color: red;" *ngIf="loanamt.errors?.required">
+                            *this field is required
+                        </span>
+                        <span style="color: red;" *ngIf="
+                        loanamt.errors?.pattern">
+                            *invalid amount, amount should not be greater than 25 lakh
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanroi">Rate of interest</label>
+                    <input class="form-control" type="number" id="loanroi" name="loanroi" #loanroi="ngModel" ngModel
+                        placeholder="Enter loan rate of interest" required [(ngModel)]="loanDummy.LoanROI"
+                        pattern="^([0-9]\.[0-9]{1}|[0-9]\.[0-9]{2}|\.[0-9]{2}|[1-9][0-9]\.[0-9]{1}|[1-9][0-9]\.[0-9]{2}|[0-9][0-9]|[1-9][0-9]\.[0-9]{2})$|^([0-9]|[0-9][0-9]|[0-99])$|^100$">
+                    <div>
+                        <span style="color: red;" *ngIf="loanroi.errors?.required">
+                            *this field is required
+                        </span>
+                        <span style="color: red;" *ngIf="loanroi.errors?.pattern">
+                            *invalid rate of interest, rate of interest should be in the range 1 to 20
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="loanperiod">Period</label>
+                    <input class="form-control" type="number" id="loanperiod" name="loanperiod" #loanperiod="ngModel"
+                        ngModel placeholder="Enter loan period in years" required [(ngModel)]="loanDummy.LoanPeriod"
+                        pattern="([1-9]|10)">
+                    <div>
+                        <span style="color: red;" *ngIf="loanperiod.errors?.required">
+                            *this field is required
+                        </span>
+                        <span style="color: red;" *ngIf="
+                        loanperiod.errors?.pattern">
+                            *invalid loan period, loan period should not be greater than 10 years
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" [disabled]='form.invalid' class="btn btn-primary">Update</button>
+            </form>
+        </div>
+        <div class="card-footer" style="background-color: #143b64;"></div>
+    </div>
+</div>

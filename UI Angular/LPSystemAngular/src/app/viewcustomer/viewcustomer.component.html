@@ -1,0 +1,31 @@
+<br>
+<br>
+
+<div class="container">
+    <h4 class="text-dark text-center">View Customer</h4>
+    <br>
+    <div class="card shadow-lg">
+        <table class="table table-hover text-center">
+            <thead style="background-color: #143b64;" class="text-light">
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Customer Gender</th>
+                    <th>Customer Email</th>
+                    <!-- <th *ngIf="clientService.isAdminLogin()">Customer Password</th> -->
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let customer of customers'>
+
+                    <td>{{customer.UserName}}</td>
+                    <td>{{customer.UserGender}}</td>
+                    <td>{{customer.UserEmail}}</td>
+                    <!-- <td *ngIf="clientService.isAdminLogin()">{{customer.UserPass}}</td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

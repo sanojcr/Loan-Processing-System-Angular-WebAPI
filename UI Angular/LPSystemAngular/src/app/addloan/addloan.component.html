@@ -1,0 +1,86 @@
+<br>
+<br>
+
+<div class="col-md-6 offset-3">
+    <h4 class="text-dark text-center">Make Loan</h4>
+    <br>
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">Loan Application</div>
+        <div class="card-body">
+            <form [formGroup]='loanApp' (ngSubmit)="applicationReg()">
+                <div class="form-group">
+                    <label for="usermob">Mobile Number</label>
+                    <input class="form-control" type="number" id="usermob" name="usermob" formControlName="usermob"
+                        placeholder="Enter user mobile number">
+                    <span style="color: red;"
+                        *ngIf="loanApp.get('usermob') && (loanApp.get('usermob').touched||loanApp.get('usermob').dirty) && loanApp.get('usermob').invalid">
+                        <span *ngIf="loanApp.get('usermob').errors.required">
+                            *this field is required
+                        </span>
+                        <span *ngIf="loanApp.get('usermob').errors.pattern">
+                            *mobile number should contain 10 digits
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="useradhaar">Adhaar No</label>
+                    <input class="form-control" type="number" id="useradhaar" name="useradhaar"
+                        formControlName="useradhaar" placeholder="Enter user adhaar number">
+                    <span style="color: red;"
+                        *ngIf="loanApp.get('useradhaar') && (loanApp.get('useradhaar').touched||loanApp.get('useradhaar').dirty) && loanApp.get('useradhaar').invalid">
+                        <span *ngIf="loanApp.get('useradhaar').errors.required">
+                            *this field is required
+                        </span>
+                        <span *ngIf="loanApp.get('useradhaar').errors.pattern">
+                            *adhaar number should contain 12 digits
+                        </span>
+
+                    </span>
+                </div>
+
+                <div class="form-group">
+                    <label for="loantype">Loan Type</label>
+                    <select class="form-control" id="loantype" name="loantype" formControlName="loantype"
+                        (change)="takeAmount($event.target.value)">
+                        <option selected value="" disabled>Choose...</option>
+                        <option *ngFor='let loan of listOfLoans' [value]="loan.LoanId">
+                            {{loan.LoanId}} - {{loan.LoanType}}
+                        </option>
+                    </select>
+
+                    <span style="color: red;"
+                        *ngIf="loanApp.get('loantype') && (loanApp.get('loantype').touched||loanApp.get('loantype').dirty) && loanApp.get('loantype').invalid">
+                        <span *ngIf="loanApp.get('loantype').errors.required">
+                            *this field is required
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="loanamt">Loan Amount</label>
+                    <input [(ngModel)]='loanAmount' class="form-control" type="number" id="loanamt" name="loanamt"
+                        formControlName="loanamt" placeholder="Choose the loan type first">
+                    <span style="color: red;"
+                        *ngIf="loanApp.get('loanamt') && (loanApp.get('loanamt').touched||loanApp.get('loanamt').dirty) && loanApp.get('loanamt').invalid">
+                        <span *ngIf="loanApp.get('loanamt').errors.required">
+                            *this field is required
+                        </span>
+                        <span *ngIf="loanApp.get('loanamt').errors.pattern">
+                            *invalid amount
+                        </span>
+                        <span *ngIf="loanApp.get('loanamt').errors.max">
+                            *invalid amount, amount should not be greater than 25 lakh
+                        </span>
+                    </span>
+                    <span style="color: red;"
+                        *ngIf="loanAmount<loanValid && (loanApp.get('loanamt').touched||loanApp.get('loanamt').dirty)">
+                        *invalid amount, for this perticular loan type minimum loan amount should be {{loanValid}}
+                    </span>
+                </div>
+                <button [disabled]='loanApp.invalid  || loanAmount<loanValid ' type="submit"
+                    class="btn btn-primary">Apply</button>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

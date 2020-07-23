@@ -1,0 +1,101 @@
+<br>
+<br>
+<div class="col-md-6 offset-3">
+    <h4 class="text-dark text-center">Add Loan</h4>
+    <br>
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">Loan Details</div>
+        <div class="card-body">
+            <form [formGroup]='loanDetails' (ngSubmit)="loanReg()">
+                <div class="form-group">
+                    <label for="loantype">Loan type</label>
+                    <input class="form-control" type="text" id="loantype" name="loantype" formControlName="loantype"
+                        placeholder="Enter loan type">
+                    <div>
+                        <span style="color: red;"
+                            *ngIf="loanDetails.get('loantype') && (loanDetails.get('loantype').touched||loanDetails.get('loantype').dirty) && loanDetails.get('loantype').invalid">
+                            <span *ngIf="loanDetails.get('loantype').errors.required">
+                                *this field is required
+                            </span>
+                            <span *ngIf="loanDetails.get('loantype').errors.minlength">
+                                *atleast 5 characters is required
+                            </span>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="loanamt">Loan amount</label>
+                    <input class="form-control" type="number" id="loanamt" name="loanamt" formControlName="loanamt"
+                        placeholder="Enter loan amount">
+                    <div>
+                        <span style="color: red;"
+                            *ngIf="loanDetails.get('loanamt') && (loanDetails.get('loanamt').touched||loanDetails.get('loanamt').dirty) && loanDetails.get('loanamt').invalid">
+                            <span *ngIf="loanDetails.get('loanamt').errors.required">
+                                *this field is required
+                            </span>
+                            <span *ngIf="loanDetails.get('loanamt').errors.pattern">
+                                *invalid input
+                            </span>
+                            <span *ngIf="loanDetails.get('loanamt').errors.max">
+                                *invalid amount, amount should not be greater than 25 lakh
+                            </span>
+                            <span *ngIf="loanDetails.get('loanamt').errors.min">
+                                *invalid amount, amount should not be less than 1 lakh
+                            </span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanroi">Rate of interest</label>
+                    <input class="form-control" type="number" id="loanroi" name="loanroi" formControlName="loanroi"
+                        placeholder="Enter loan rate of interest">
+                    <div>
+                        <span style="color: red;"
+                            *ngIf="loanDetails.get('loanroi') && (loanDetails.get('loanroi').touched||loanDetails.get('loanroi').dirty) && loanDetails.get('loanroi').invalid">
+                            <span *ngIf="loanDetails.get('loanroi').errors.required">
+                                *this field is required
+                            </span>
+                            <span *ngIf="loanDetails.get('loanroi').errors.pattern">
+                                *invalid input
+                            </span>
+                            <span *ngIf="loanDetails.get('loanroi').errors.max">
+                                *invalid rate of interest, rate of interest should not be greater than 20 %
+                            </span>
+                            <span *ngIf="loanDetails.get('loanroi').errors.min">
+                                *invalid rate of interest, rate of interest should not be less than 1 %
+                            </span>
+                        </span>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="loanperiod">Period</label>
+                    <input class="form-control" type="number" id="loanperiod" name="loanperiod"
+                        formControlName="loanperiod" placeholder="Enter loan period in years">
+                    <div>
+                        <span style="color: red;"
+                            *ngIf="loanDetails.get('loanperiod') && (loanDetails.get('loanperiod').touched||loanDetails.get('loanperiod').dirty) && loanDetails.get('loanperiod').invalid">
+                            <span *ngIf="loanDetails.get('loanperiod').errors.required">
+                                *this field is required
+                            </span>
+                            <span *ngIf="loanDetails.get('loanperiod').errors.pattern">
+                                *invalid input
+                            </span>
+                            <span *ngIf="loanDetails.get('loanperiod').errors.max">
+                                *invalid loan period, loan period should not be greater than 10 years
+                            </span>
+                            <span *ngIf="loanDetails.get('loanperiod').errors.min">
+                                *invalid loan period, loan period should not be less than 1 year
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" [disabled]='loanDetails.invalid' class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

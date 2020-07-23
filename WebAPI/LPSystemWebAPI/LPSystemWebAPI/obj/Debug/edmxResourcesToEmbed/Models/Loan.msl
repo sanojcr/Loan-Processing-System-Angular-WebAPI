@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LPSystemModelStoreContainer" CdmEntityContainer="LoanEntity">
+    <EntitySetMapping Name="LoanTables">
+      <EntityTypeMapping TypeName="LPSystemModel.LoanTable">
+        <MappingFragment StoreEntitySet="LoanTable">
+          <ScalarProperty Name="LoanId" ColumnName="LoanId" />
+          <ScalarProperty Name="LoanType" ColumnName="LoanType" />
+          <ScalarProperty Name="LoanAmt" ColumnName="LoanAmt" />
+          <ScalarProperty Name="LoanROI" ColumnName="LoanROI" />
+          <ScalarProperty Name="LoanPeriod" ColumnName="LoanPeriod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

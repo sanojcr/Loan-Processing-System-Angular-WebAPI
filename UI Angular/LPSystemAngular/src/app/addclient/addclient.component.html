@@ -1,0 +1,79 @@
+<br>
+<br>
+<div class="col-md-6 offset-3 ">
+    <h4 class="text-dark text-center">Add Client</h4>
+    <br>
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">Client form</div>
+        <div class="card-body">
+            <form [formGroup]='newClient' (ngSubmit)="register()">
+                <div class="form-group">
+                    <label for="username">Name</label>
+                    <input class="form-control" type="text" id="username" name="username" formControlName="username"
+                        placeholder="Enter user name">
+                    <div>
+                        <span style="color: red;"
+                            *ngIf="newClient.get('username') && (newClient.get('username').touched||newClient.get('username').dirty) && newClient.get('username').invalid">
+                            <span *ngIf="newClient.get('username').errors.required">
+                                *this field is required
+                            </span>
+                            <span *ngIf="newClient.get('username').errors.minlength">
+                                *atleast 3 characters is required
+                            </span>
+                            <span *ngIf="newClient.get('username').errors.pattern">
+                                *name should start with an uppercase letter and contain only alphabet
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="useremail">Email</label>
+                    <input class="form-control" type="email" id="useremail" name="useremail" formControlName="useremail"
+                        placeholder="Enter user email">
+                    <span style="color: red;"
+                        *ngIf="newClient.get('useremail') && (newClient.get('useremail').touched||newClient.get('useremail').dirty) && newClient.get('useremail').invalid">
+                        <span *ngIf="newClient.get('useremail').errors.required">
+                            *this field is required
+                        </span>
+                        <span *ngIf="newClient.get('useremail').errors.email">
+                            *enter a valid email
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="usergender">Select Gender</label>
+                    <select class="form-control" id="usergender" name="usergender" formControlName="usergender">
+                        <option selected value="" disabled>Choose...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <span style="color: red;"
+                        *ngIf="newClient.get('usergender') && (newClient.get('usergender').touched||newClient.get('usergender').dirty) && newClient.get('usergender').invalid">
+                        <span *ngIf="newClient.get('usergender').errors.required">
+                            *this field is required
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="userpass">Password</label>
+                    <input class="form-control" type="password" id="userpass" name="userpass" formControlName="userpass"
+                        placeholder="Enter user password">
+                    <span style="color: red;"
+                        *ngIf="newClient.get('userpass') && (newClient.get('userpass').touched||newClient.get('userpass').dirty) && newClient.get('userpass').invalid">
+                        <span *ngIf="newClient.get('userpass').errors.required">
+                            *this field is required
+                        </span>
+                        <span *ngIf="newClient.get('userpass').errors.pattern">
+                            *password should contain atleast 8 characters, including at least 1 number, both
+                            lower and uppercase letters and special characters
+                        </span>
+                    </span>
+                </div>
+                <button type="submit" [disabled]='newClient.invalid' class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

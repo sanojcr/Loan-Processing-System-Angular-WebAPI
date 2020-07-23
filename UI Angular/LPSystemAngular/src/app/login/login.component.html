@@ -1,0 +1,50 @@
+<br>
+<br>
+<h4 class="text-dark text-center">Login</h4>
+<br>
+
+<div class="col-md-4 offset-sm-4">
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">Login</div>
+        <div class="card-body">
+            <!-- <h4 class="text-dark text-center">Login</h4> -->
+            <form [formGroup]='user' (ngSubmit)="login()">
+                <div class="form-group">
+                    <label for="useremail">Email</label>
+                    <input class="form-control" type="email" id="useremail" name="useremail" formControlName="useremail"
+                        placeholder="Enter user email">
+                    <span style="color: red;"
+                        *ngIf="user.get('useremail') && (user.get('useremail').touched||user.get('useremail').dirty) && user.get('useremail').invalid">
+                        <span *ngIf="user.get('useremail').errors.required">
+                            *this field is required
+                        </span>
+                        <span *ngIf="user.get('useremail').errors.email">
+                            *enter a valid email
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="userpass">Password</label>
+                    <input class="form-control" type="password" id="userpass" name="userpass" formControlName="userpass"
+                        placeholder="Enter user password">
+                    <span style="color: red;"
+                        *ngIf="user.get('userpass') && (user.get('userpass').touched||user.get('userpass').dirty) && user.get('userpass').invalid">
+                        <span *ngIf="user.get('userpass').errors.required">
+                            *this field is required
+                        </span>
+                        <!-- <span *ngIf="user.get('userpass').errors.minlength">
+                            *atleast 8 characters is required
+                        </span> -->
+                        <span *ngIf="user.get('userpass').errors.pattern">
+                            *password should contains atleast 8 characters, including atleast 1 number, both
+                            lower and uppercase letters and special characters
+                        </span>
+                    </span>
+                </div>
+                <button [disabled]="user.invalid" type="submit" class="btn btn-primary">Login</button>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

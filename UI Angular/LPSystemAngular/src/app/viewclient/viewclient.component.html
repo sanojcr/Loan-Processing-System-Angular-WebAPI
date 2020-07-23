@@ -1,0 +1,40 @@
+<br>
+<br>
+
+<div class="container">
+    <h4 class="text-dark text-center">View Client</h4>
+    <button class="btn btn-sm btn-primary text-light" routerLink='/addclient'>Add Client</button>
+    <br>
+    <br>
+    <div class="card shadow-lg">
+        <table class="table table-hover text-center">
+            <thead style="background-color: #143b64;" class="text-light">
+                <tr>
+                    <th>Client Name</th>
+                    <th>Client Gender</th>
+                    <th>Client Email</th>
+                    <!-- <th>Client Password</th> -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let client of clients'>
+
+                    <td>{{client.UserName}}</td>
+                    <td>{{client.UserGender}}</td>
+                    <td>{{client.UserEmail}}</td>
+                    <!-- <td>{{client.UserPass}}</td> -->
+                    <td>
+                        <div class="col">
+                            <button class="btn btn-danger" (click)="deleteClient(client)">
+                                Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

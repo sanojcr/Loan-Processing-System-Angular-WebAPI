@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LPSystemModelStoreContainer" CdmEntityContainer="ApplicationsEntity">
+    <EntitySetMapping Name="ApplTables">
+      <EntityTypeMapping TypeName="LPSystemModel.ApplTable">
+        <MappingFragment StoreEntitySet="ApplTable">
+          <ScalarProperty Name="AppId" ColumnName="AppId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="LoanId" ColumnName="LoanId" />
+          <ScalarProperty Name="UserMob" ColumnName="UserMob" />
+          <ScalarProperty Name="UserAdhaar" ColumnName="UserAdhaar" />
+          <ScalarProperty Name="LoanAmt" ColumnName="LoanAmt" />
+          <ScalarProperty Name="AppStatus" ColumnName="AppStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

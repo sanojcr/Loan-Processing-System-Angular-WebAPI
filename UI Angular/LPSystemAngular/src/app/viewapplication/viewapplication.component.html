@@ -1,0 +1,55 @@
+<br>
+<br>
+
+<div class="container">
+    <h4 class="text-dark text-center">View Application</h4>
+    <br>
+    <div class="card shadow-lg">
+        <table class="table table-hover text-center">
+            <thead style="background-color: #143b64;" class="text-light">
+                <tr>
+                    <th>Appl No</th>
+                    <th>Customer Name</th>
+                    <th>Customer Gender</th>
+                    <th>Customer Email</th>
+                    <th>Customer MbNo</th>
+                    <th>Customer Adhaar</th>
+                    <th>Loan Id</th>
+                    <th>Loan Type</th>
+                    <th>Loan Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let application of applications'>
+                    <td>{{application.AppId}}</td>
+                    <td>{{application.UserName}}</td>
+                    <td>{{application.UserGender}}</td>
+                    <td>{{application.UserEmail}}</td>
+                    <td>{{application.UserMob}}</td>
+                    <td>{{application.UserAdhaar}}</td>
+                    <td>{{application.LoanId}}</td>
+                    <td>{{application.LoanType}}</td>
+                    <td>{{application.LoanAmt}}</td>
+                    <td>
+                        <div class="row">
+                            <div class="col">
+                                <button style="margin-right: 40px;" class="btn btn-success"
+                                    (click)="appApprove(application)">
+                                    Approve
+                                </button>
+                            </div>
+                            <div class="col">
+                                <button class="btn btn-danger" (click)="appReject(application)">
+                                    Reject
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

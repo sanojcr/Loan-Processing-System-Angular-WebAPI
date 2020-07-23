@@ -1,0 +1,34 @@
+<br>
+<br>
+
+<div class="container">
+    <h4 class="text-dark text-center">View Loan</h4>
+    <button style="margin-bottom: 20px;" *ngIf="userService.isCustomerLogin()" class="btn btn-sm btn-primary text-light"
+        routerLink='/addloan'>Make
+        Loan</button>
+    <br>
+    <div class="card shadow-lg">
+        <table class="table table-hover text-center">
+            <thead style=" background-color: #143b64;" class="text-light">
+                <tr>
+                    <th>Loan No</th>
+                    <th>Loan Type</th>
+                    <th>Loan Amount</th>
+                    <th>Rate of Interest</th>
+                    <th>Period</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let loan of loans'>
+                    <td>{{loan.LoanId}}</td>
+                    <td>{{loan.LoanType}}</td>
+                    <td>{{loan.LoanAmt}}</td>
+                    <td>{{loan.LoanROI}} %</td>
+                    <td>{{loan.LoanPeriod}} Year</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="background-color: #143b64;" class="card-footer shadow-lg"></div>
+</div>

@@ -1,0 +1,77 @@
+<br>
+<br>
+<div *ngIf='user' class="col-md-6 offset-3 ">
+    <h4 class="text-dark text-center">Update {{user.UserRole}}</h4>
+    <br>
+    <div class="card shadow-lg">
+        <div style="background-color: #143b64;" class="card-header text-light">{{user.UserRole}} form</div>
+        <div class="card-body">
+            <form #form="ngForm" (ngSubmit)="update(form)">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="username">Name</label>
+                        <input class="form-control" type="text" id="username" name="username" #username="ngModel"
+                            ngModel placeholder="Enter client name" [(ngModel)]='user.UserName' required
+                            pattern="^[A-Z][a-z]+([\ A-Za-z]+)*" minlength="3">
+                        <div>
+                            <span style="color: red;" *ngIf="username.errors?.required">
+                                *this field is required
+                            </span>
+                            <span style="color: red;" *ngIf="username.errors?.minlength">
+                                *minimum 3 characters required
+                            </span>
+                            <span style="color: red;" *ngIf="
+                                username.errors?.pattern">
+                                *name should start with an uppercase letter and contain only alphabet
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="useremail">Email</label>
+                    <input class="form-control" type="email" id="useremail" name="useremail" #useremail="ngModel"
+                        ngModel placeholder="Enter client email" [(ngModel)]='user.UserEmail' [readonly]="true">
+                </div>
+                <div class="form-group">
+                    <label for="usergender">Select Gender</label>
+                    <select class="form-control" id="usergender" name="usergender" #usergender="ngModel" ngModel
+                        [(ngModel)]='user.UserGender' required>
+                        <option selected value="" disabled>Choose...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div>
+                        <span style="color: red;" *ngIf="usergender && usergender.touched 
+                            && usergender.invalid">
+                            *this field is required
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="userpass">Password</label>
+                    <input class="form-control" type="text" id="userpass" name="userpass" #userpass="ngModel" ngModel
+                        placeholder="Enter client password" [(ngModel)]='user.UserPass' minlength="8" required
+                        pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$">
+                    <div>
+                        <span style="color: red;" *ngIf="userpass.errors?.required">
+                            *this field is required
+                        </span>
+                        <!-- <span style="color: red;" *ngIf="userpass.errors?.minlength">
+                            *minimum 8 characters required
+                        </span> -->
+                        <span style="color: red;" *ngIf="userpass.errors?.pattern || userpass.errors?.minlength">
+                            *password should contain atleast 8 characters, including at least 1 number, both
+                            lower and uppercase letters and special characters
+                        </span>
+                    </div>
+                </div>
+                <button type="submit" [disabled]='form.invalid' class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <div class="card-footer shadow-lg" style="background-color: #143b64;">
+    </div>
+</div>

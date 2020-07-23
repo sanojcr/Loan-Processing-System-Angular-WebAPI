@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LPSystemWebAPI.Controllers.ApplTablesController">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEBAAKAAIAAAAAAAIBAAgAAAAAQAAAAAAAAIAAA=</HashCode>
+      <FileName>Controllers\ApplTablesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Controllers.IfUserExistController">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\IfUserExistController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Controllers.LoanTablesController">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAACCAAIAAAAAAgAAAAABAAAgAAAAQAAAAAAAA=</HashCode>
+      <FileName>Controllers\LoanTablesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Controllers.LoginAuthController">
+    <Position X="2.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\LoginAuthController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Controllers.UserTablesController">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAACAAAAAAABAKAAABAAAQBAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserTablesController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Web.Http.ApiController" Collapsed="true">
+    <Position X="1.75" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.ApplicationsEntity">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Applications.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.ApplTable">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="System.Object" FixedToPoint="true">
+      <Path>
+        <Point X="7.5" Y="1.312" />
+        <Point X="7.5" Y="1.51" />
+        <Point X="6.5" Y="1.51" />
+        <Point X="6.5" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>wAAAAAAAAAAAAAAAAAAAAIgAAAAAAAAAAARAAAQAAAA=</HashCode>
+      <FileName>Models\ApplTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.Apply">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAAAIAAAAAAAAAAAAAAAIgAAAAAAABAAQRACAQAAAA=</HashCode>
+      <FileName>Models\Apply.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.AuthorizationProvider">
+    <Position X="9.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AuthorizationProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.LoanEntity">
+    <Position X="4" Y="6.25" Width="1.5" />
+    <InheritanceLine Type="System.Data.Entity.DbContext" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.312" />
+        <Point X="4.75" Y="1.622" />
+        <Point X="3.878" Y="1.622" />
+        <Point X="3.878" Y="3.562" />
+        <Point X="3.872" Y="3.562" />
+        <Point X="3.872" Y="3.622" />
+        <Point X="3.878" Y="3.622" />
+        <Point X="3.878" Y="3.872" />
+        <Point X="3.872" Y="3.872" />
+        <Point X="3.872" Y="6.058" />
+        <Point X="4.75" Y="6.058" />
+        <Point X="4.75" Y="6.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Loan.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.LoanTable">
+    <Position X="5.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAQAAAABAAARAAAAAAAA=</HashCode>
+      <FileName>Models\LoanTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.Startup">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.UserEntity">
+    <Position X="4" Y="4" Width="1.5" />
+    <InheritanceLine Type="System.Data.Entity.DbContext" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.312" />
+        <Point X="4.75" Y="1.622" />
+        <Point X="3.878" Y="1.622" />
+        <Point X="3.878" Y="3.562" />
+        <Point X="3.872" Y="3.562" />
+        <Point X="3.872" Y="3.622" />
+        <Point X="3.878" Y="3.622" />
+        <Point X="3.878" Y="3.872" />
+        <Point X="4.688" Y="3.872" />
+        <Point X="4.688" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\User.Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.UserTable">
+    <Position X="9.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAgAAABAAAgAAQAACAAAAAA=</HashCode>
+      <FileName>Models\UserTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.UserCred">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Models\UserCred.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.UserCrypt">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserCrypt.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LPSystemWebAPI.Models.UserRepository" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAABAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Data.Entity.DbContext" Collapsed="true">
+    <Position X="4" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="6.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Microsoft.Owin.Security.OAuth.OAuthAuthorizationServerProvider" Collapsed="true">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

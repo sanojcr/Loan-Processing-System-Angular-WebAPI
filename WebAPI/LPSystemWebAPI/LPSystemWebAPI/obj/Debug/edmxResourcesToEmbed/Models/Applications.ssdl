@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LPSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ApplTable">
+    <Key>
+      <PropertyRef Name="AppId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoanId" />
+    </Key>
+    <Property Name="AppId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="LoanId" Type="int" Nullable="false" />
+    <Property Name="UserMob" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserAdhaar" Type="nvarchar" MaxLength="50" />
+    <Property Name="LoanAmt" Type="money" />
+    <Property Name="AppStatus" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="LPSystemModelStoreContainer">
+    <EntitySet Name="ApplTable" EntityType="Self.ApplTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
